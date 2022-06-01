@@ -5,9 +5,9 @@ This is a comparison between Java Stream and Flux to parse a comma delimiter fil
 
 1. Using Files.lines to create a Stream<String>, then parse each line to Map<String, Object> object from the stream. After parsing all lines, write all parsed objects to files one by one.
   
-2. Using Files.lines to create a Flux<String>, then parse each line to Map<String, Object> object and write the object incremently to two files at the same time.
+2. Using Files.lines to create a Flux<String>, then parse each line to Map<String, Object> object and write the object incremently to two files at the same time. [ single subscriber to Flux]
   
-3. Using Files.lines to create a Flux<String>, then parse each line to Map<String, Object> object and write the object incremently to the files (with different threads).
+3. Using Files.lines to create a Flux<String>, then parse each line to Map<String, Object> object and write the object incremently to the files (with different threads). [multiple subscribers to Flux]
 
   The following is the sample size based on a million lines file.
   <TABLE>

@@ -248,17 +248,8 @@ public class ParseService {
 
 		Path inPath = Paths.get(fullFileName);
 
-		List<Map<String, Object>> outputList = Files.lines(inPath).skip(1).map(s -> parseLine(s.split(","))).filter(x -> x != null).collect(Collectors.toList());
-
-//		CSVFileReader csvFileReader = new CSVFileReader();
-
-//		List<String[]> list = csvFileReader.read(fullFileName, COMMA_SEPERATOR, null);
-//
-//		List<Map<String, Object>> outputList = list.stream().map(x -> {
-//
-//			return parseLine(x);
-//
-//		}).filter(x -> x != null).collect(Collectors.toList());
+		List<Map<String, Object>> outputList = Files.lines(inPath).skip(1).map(s -> parseLine(s.split(",")))
+				.filter(x -> x != null).collect(Collectors.toList());
 
 		return outputList;
 	}
